@@ -38,9 +38,6 @@ importers:
       '@tanstack/router-cli':
         specifier: 1.33.12
         version: 1.33.12
-      '@template/routes':
-        specifier: workspace:*
-        version: link:../../packages/Routes
       '@template/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -90,9 +87,6 @@ importers:
       '@tanstack/router-cli':
         specifier: 1.33.12
         version: 1.33.12
-      '@template/routes':
-        specifier: workspace:*
-        version: link:../../packages/Routes
       '@template/ui':
         specifier: workspace:*
         version: link:../../packages/ui

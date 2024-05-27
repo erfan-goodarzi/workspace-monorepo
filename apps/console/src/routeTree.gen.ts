@@ -10,66 +10,66 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root';
-import { Route as LoginImport } from './routes/login';
-import { Route as DashboardImport } from './routes/dashboard';
-import { Route as DashboardMeImport } from './routes/dashboard/me';
-import { Route as DashboardMePostImport } from './routes/dashboard/me/post';
+import { Route as rootRoute } from './routes/__root'
+import { Route as LoginImport } from './routes/login'
+import { Route as DashboardImport } from './routes/dashboard'
+import { Route as DashboardMeImport } from './routes/dashboard/me'
+import { Route as DashboardMePostImport } from './routes/dashboard/me/post'
 
 // Create/Update Routes
 
 const LoginRoute = LoginImport.update({
   path: '/login',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const DashboardRoute = DashboardImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const DashboardMeRoute = DashboardMeImport.update({
   path: '/me',
   getParentRoute: () => DashboardRoute,
-} as any);
+} as any)
 
 const DashboardMePostRoute = DashboardMePostImport.update({
   path: '/post',
   getParentRoute: () => DashboardMeRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/dashboard': {
-      id: '/dashboard';
-      path: '/dashboard';
-      fullPath: '/dashboard';
-      preLoaderRoute: typeof DashboardImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardImport
+      parentRoute: typeof rootRoute
+    }
     '/login': {
-      id: '/login';
-      path: '/login';
-      fullPath: '/login';
-      preLoaderRoute: typeof LoginImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
     '/dashboard/me': {
-      id: '/dashboard/me';
-      path: '/me';
-      fullPath: '/dashboard/me';
-      preLoaderRoute: typeof DashboardMeImport;
-      parentRoute: typeof DashboardImport;
-    };
+      id: '/dashboard/me'
+      path: '/me'
+      fullPath: '/dashboard/me'
+      preLoaderRoute: typeof DashboardMeImport
+      parentRoute: typeof DashboardImport
+    }
     '/dashboard/me/post': {
-      id: '/dashboard/me/post';
-      path: '/post';
-      fullPath: '/dashboard/me/post';
-      preLoaderRoute: typeof DashboardMePostImport;
-      parentRoute: typeof DashboardMeImport;
-    };
+      id: '/dashboard/me/post'
+      path: '/post'
+      fullPath: '/dashboard/me/post'
+      preLoaderRoute: typeof DashboardMePostImport
+      parentRoute: typeof DashboardMeImport
+    }
   }
 }
 
@@ -80,7 +80,7 @@ export const routeTree = rootRoute.addChildren({
     DashboardMeRoute: DashboardMeRoute.addChildren({ DashboardMePostRoute }),
   }),
   LoginRoute,
-});
+})
 
 /* prettier-ignore-end */
 

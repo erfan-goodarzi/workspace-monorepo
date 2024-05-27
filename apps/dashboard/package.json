@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-router": "1.34.3",
+    "@tanstack/router-cli": "1.33.12",
+    "@template/ui": "workspace:*",
+    "@template/routes": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@template/ui": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

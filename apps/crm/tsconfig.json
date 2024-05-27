@@ -20,13 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src",
-    "../../packages/Routes/routes",
-    "../../packages/Routes/routeTree.gen.ts",
-    "../../packages/Routes/vite.config.ts",
-    "../../packages/Routes/tsconfig.json",
-    "../../packages/Routes/tsconfig.node.json"
-  ],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
